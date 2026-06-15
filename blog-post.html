@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why Functional Fitness Beats the Treadmill — Bewdley Bootcamp Blog</title>
+  <meta name="description" content="Most people join a gym and head straight for the cardio machines. But if your goal is to look better, feel stronger, and actually enjoy training, there's a better way." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .post-hero {
+      background: var(--forest-deep);
+      padding: 140px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .post-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(28,43,26,0.4) 0%, rgba(28,43,26,0.9) 100%);
+      pointer-events: none;
+    }
+
+    .post-hero-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--forest-mid), var(--moss));
+      opacity: 0.5;
+    }
+
+    .post-hero .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .post-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(232,224,208,0.5);
+      margin-bottom: 24px;
+    }
+
+    .post-breadcrumb a {
+      color: rgba(232,224,208,0.5);
+      transition: color var(--transition);
+    }
+    .post-breadcrumb a:hover { color: var(--amber); }
+    .post-breadcrumb span { color: rgba(232,224,208,0.3); }
+
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .post-tag {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      background: var(--amber);
+      color: var(--forest-deep);
+      padding: 4px 12px;
+      border-radius: var(--radius-sm);
+    }
+
+    .post-date {
+      font-size: 0.85rem;
+      color: rgba(232,224,208,0.5);
+    }
+
+    .post-hero h1 {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: 0.95;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      color: var(--off-white);
+      max-width: 800px;
+      margin-bottom: 20px;
+    }
+
+    .post-hero-sub {
+      font-size: 1.05rem;
+      color: rgba(245,242,236,0.65);
+      max-width: 560px;
+      line-height: 1.6;
+    }
+
+    .post-hero-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .author-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--moss);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--off-white);
+    }
+
+    .author-info strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--off-white);
+    }
+
+    .author-info span {
+      font-size: 0.78rem;
+      color: rgba(232,224,208,0.5);
+    }
+
+    /* Post layout */
+    .post-layout {
+      padding: 80px 0;
+      background: var(--off-white);
+    }
+
+    .post-inner {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 64px;
+      align-items: start;
+    }
+
+    /* Article body */
+    .post-body {
+      background: var(--white);
+      padding: 48px;
+    }
+
+    .post-body .post-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: linear-gradient(135deg, var(--forest-mid), var(--moss));
+      border-radius: var(--radius-sm);
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(245,242,236,0.2);
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .post-body h2 {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 1.8rem;
+      text-transform: uppercase;
+      color: var(--forest-deep);
+      margin: 40px 0 16px;
+      line-height: 1;
+    }
+
+    .post-body h3 {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      color: var(--forest-deep);
+      margin: 28px 0 12px;
+    }
+
+    .post-body p {
+      font-size: 1rem;
+      color: var(--text-mid);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .post-body ul, .post-body ol {
+      margin: 0 0 20px 20px;
+    }
+
+    .post-body li {
+      font-size: 1rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+
+    .post-body blockquote {
+      border-left: 4px solid var(--amber);
+      margin: 32px 0;
+      padding: 16px 24px;
+      background: var(--off-white);
+    }
+
+    .post-body blockquote p {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--forest-deep);
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    /* Post tags */
+    .post-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 40px;
+      padding-top: 32px;
+      border-top: 1px solid var(--chalk);
+    }
+
+    .post-tag-item {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border: 2px solid var(--chalk);
+      border-radius: var(--radius-sm);
+      color: var(--text-muted);
+      transition: all var(--transition);
+    }
+    .post-tag-item:hover {
+      border-color: var(--moss);
+      color: var(--moss);
+    }
+
+    /* Sidebar */
+    .post-sidebar {
+      position: sticky;
+      top: 96px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .sidebar-widget {
+      background: var(--white);
+      padding: 28px;
+    }
+
+    .sidebar-widget h4 {
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 16px;
+    }
+
+    .sidebar-post {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--chalk);
+    }
+
+    .sidebar-post:last-child { border-bottom: none; }
+
+    .sidebar-post-tag {
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--moss);
+    }
+
+    .sidebar-post a {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      color: var(--forest-deep);
+      line-height: 1.2;
+      transition: color var(--transition);
+    }
+    .sidebar-post a:hover { color: var(--moss); }
+
+    .sidebar-post-date {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .sidebar-cta {
+      background: var(--forest-deep);
+      padding: 28px;
+      text-align: center;
+    }
+
+    .sidebar-cta h4 {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      color: var(--off-white);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .sidebar-cta p {
+      font-size: 0.85rem;
+      color: rgba(232,224,208,0.6);
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .sidebar-cta .btn {
+      width: 100%;
+    }
+
+    /* Related posts */
+    .related-section {
+      padding: 0 0 80px;
+      background: var(--off-white);
+    }
+
+    .related-section .container > h3 {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 1.1rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: 900px) {
+      .post-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .post-sidebar {
+        position: static;
+      }
+
+      .post-body {
+        padding: 32px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header" id="site-header">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-main">BEWDLEY</span>
+        <span class="logo-sub">BOOTCAMP</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="classes.html">Classes</a>
+        <a href="booking.html">Book</a>
+        <a href="team.html">Team</a>
+        <a href="blog.html" class="active">Blog</a>
+        <a href="contact.html">Contact</a>
+        <a href="booking.html" class="nav-cta">Book a Class</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="post-hero">
+    <div class="post-hero-bg"></div>
+    <div class="container">
+      <nav class="post-breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <a href="blog.html">Blog</a>
+        <span>/</span>
+        <span>Why Functional Fitness Beats the Treadmill</span>
+      </nav>
+      <div class="post-meta">
+        <span class="post-tag">Training</span>
+        <span class="post-date">12 June 2025</span>
+      </div>
+      <h1>WHY FUNCTIONAL FITNESS BEATS THE TREADMILL</h1>
+      <p class="post-hero-sub">Most people join a gym and head straight for the cardio machines. But if your goal is to look better, feel stronger, and actually enjoy training — there's a better way.</p>
+      <div class="post-hero-author">
+        <div class="author-avatar">CP</div>
+        <div class="author-info">
+          <strong>Chris Pinner</strong>
+          <span>Head Coach, Bewdley Bootcamp</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="post-layout">
+    <div class="container">
+      <div class="post-inner">
+
+        <article class="post-body">
+          <div class="post-img">Featured article image — replace with &lt;img&gt;</div>
+
+          <p>Walk into any commercial gym on a Monday morning and you'll find the same scene: rows of treadmills and cross-trainers, all occupied, all facing a wall of TVs. People grinding away at a steady pace, watching the calories tick up, waiting for it to be over.</p>
+
+          <p>We understand the appeal. Cardio machines feel safe. You know exactly how fast you're going, you can stop whenever you want, and nobody's watching you. But if you've been using a treadmill for six months and you still don't feel any different — there's a reason for that.</p>
+
+          <h2>WHAT IS FUNCTIONAL FITNESS, ACTUALLY?</h2>
+
+          <p>Functional fitness is training that improves your ability to do real things. Lift heavy objects. Move quickly when you need to. Get up off the floor without your knees complaining. Carry the shopping in from the car in one trip.</p>
+
+          <p>It draws on compound movements — squats, deadlifts, presses, pulls, carries — performed at varying intensities and in varying combinations. The goal isn't a number on a screen. The goal is a body that works better.</p>
+
+          <blockquote>
+            <p>"The goal isn't a number on a screen. The goal is a body that works better."</p>
+          </blockquote>
+
+          <h2>THREE REASONS IT OUTPERFORMS STEADY-STATE CARDIO</h2>
+
+          <h3>1. It builds muscle as well as burning calories</h3>
+          <p>A treadmill session burns calories during the session. Functional strength training builds lean muscle, which raises your metabolic rate 24/7. Over weeks and months, the compound effect is significant. You're not just burning more in the gym — you're burning more all the time.</p>
+
+          <h3>2. It's genuinely varied</h3>
+          <p>Boredom is one of the biggest reasons people stop training. When every session is different — different movements, different time domains, different loading — your brain stays engaged and your body keeps adapting. Adaptation is progress.</p>
+
+          <h3>3. It transfers to real life</h3>
+          <p>A stronger back. Better posture. Knees that don't ache on the stairs. The ability to play with your kids without getting winded. These are the things that actually change how you feel day to day — and they come from functional training, not the treadmill.</p>
+
+          <h2>BUT WHAT ABOUT CARDIO FITNESS?</h2>
+
+          <p>Here's the thing: you don't stop improving your cardiovascular fitness when you switch to functional training. Our conditioning sessions — AMRAPs, EMOMs, timed circuits — push your heart rate just as hard as steady-state cardio. Often harder. You just do it while also building strength, improving movement quality, and having a better time.</p>
+
+          <p>That said, steady-state cardio absolutely has its place. A long walk in the Wyre Forest, a bike ride, a swim — these are wonderful. We're not anti-cardio. We're anti-<em>only</em> cardio, if your goal is to change how you look and feel.</p>
+
+          <h2>WHERE TO START</h2>
+
+          <p>If you've never done functional fitness training before, the best first step is just to come in. Our drop-in classes are designed for all abilities — our coaches will scale movements to where you are, and you won't be left behind or pushed beyond what's safe.</p>
+
+          <p>A single drop-in is £8. There's no commitment, no induction required, and no judgment. Just show up and give it a go.</p>
+
+          <div class="post-tags">
+            <span class="post-tag-item">Functional Fitness</span>
+            <span class="post-tag-item">Strength Training</span>
+            <span class="post-tag-item">Beginners</span>
+            <span class="post-tag-item">Cardio</span>
+          </div>
+        </article>
+
+        <aside class="post-sidebar">
+          <div class="sidebar-cta">
+            <h4>READY TO TRY A CLASS?</h4>
+            <p>Drop in for £8. No commitment, all abilities welcome.</p>
+            <a href="booking.html" class="btn btn-primary">Book Now</a>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>Recent Posts</h4>
+            <div class="sidebar-post">
+              <span class="sidebar-post-tag">Nutrition</span>
+              <a href="blog-post.html">Fuelling Your Training: A Beginner's Guide</a>
+              <span class="sidebar-post-date">3 June 2025</span>
+            </div>
+            <div class="sidebar-post">
+              <span class="sidebar-post-tag">Mobility</span>
+              <a href="blog-post.html">5 Mobility Exercises You Should Do Every Morning</a>
+              <span class="sidebar-post-date">27 May 2025</span>
+            </div>
+            <div class="sidebar-post">
+              <span class="sidebar-post-tag">Training</span>
+              <a href="blog-post.html">Progressive Overload Explained</a>
+              <span class="sidebar-post-date">19 May 2025</span>
+            </div>
+            <div class="sidebar-post">
+              <span class="sidebar-post-tag">Member Stories</span>
+              <a href="blog-post.html">From Couch to Bootcamp: Sarah's Story</a>
+              <span class="sidebar-post-date">10 May 2025</span>
+            </div>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>Class Rates</h4>
+            <div class="sidebar-post">
+              <span class="sidebar-post-tag">Monthly</span>
+              <a href="booking.html">Unlimited Classes — £63/month</a>
+            </div>
+            <div class="sidebar-post">
+              <span class="sidebar-post-tag">Block</span>
+              <a href="booking.html">10 Classes — £75</a>
+            </div>
+            <div class="sidebar-post">
+              <span class="sidebar-post-tag">Drop In</span>
+              <a href="booking.html">Single Class — £8</a>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Related posts -->
+  <section class="related-section">
+    <div class="container">
+      <h3>More from the Blog</h3>
+      <div class="blog-grid" style="grid-template-columns: repeat(3, 1fr);">
+        <article class="blog-card">
+          <div class="blog-card-img">
+            <div style="width:100%;height:100%;background:linear-gradient(135deg,var(--forest-mid),var(--moss));display:flex;align-items:center;justify-content:center;color:rgba(245,242,236,0.2);font-family:var(--font-display);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;">Post image</div>
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-card-meta">
+              <span class="blog-card-tag">Nutrition</span>
+              <span class="blog-card-date">3 June 2025</span>
+            </div>
+            <h3>FUELLING YOUR TRAINING: A BEGINNER'S GUIDE</h3>
+            <p>What actually matters when it comes to eating around your training sessions.</p>
+            <a href="blog-post.html" class="blog-card-read">Read More →</a>
+          </div>
+        </article>
+        <article class="blog-card">
+          <div class="blog-card-img">
+            <div style="width:100%;height:100%;background:linear-gradient(135deg,var(--forest-mid),var(--moss));display:flex;align-items:center;justify-content:center;color:rgba(245,242,236,0.2);font-family:var(--font-display);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;">Post image</div>
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-card-meta">
+              <span class="blog-card-tag">Mobility</span>
+              <span class="blog-card-date">27 May 2025</span>
+            </div>
+            <h3>5 MOBILITY EXERCISES FOR EVERY MORNING</h3>
+            <p>Ten minutes that make a bigger difference than an extra gym session.</p>
+            <a href="blog-post.html" class="blog-card-read">Read More →</a>
+          </div>
+        </article>
+        <article class="blog-card">
+          <div class="blog-card-img">
+            <div style="width:100%;height:100%;background:linear-gradient(135deg,var(--forest-mid),var(--moss));display:flex;align-items:center;justify-content:center;color:rgba(245,242,236,0.2);font-family:var(--font-display);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;">Post image</div>
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-card-meta">
+              <span class="blog-card-tag">Member Stories</span>
+              <span class="blog-card-date">10 May 2025</span>
+            </div>
+            <h3>FROM COUCH TO BOOTCAMP: SARAH'S STORY</h3>
+            <p>Six months in, a 10k completed, and not a class missed in eight weeks.</p>
+            <a href="blog-post.html" class="blog-card-read">Read More →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span class="logo-main">BEWDLEY</span>
+            <span class="logo-sub">BOOTCAMP</span>
+          </div>
+          <p>Look Good. Feel Great. Live Better.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/bewdleybootcamp" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/bewdleybootcamp" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Pages</h4>
+          <a href="index.html">Home</a>
+          <a href="classes.html">Classes</a>
+          <a href="booking.html">Book</a>
+          <a href="team.html">Team</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-links">
+          <h4>Classes</h4>
+          <a href="classes.html#strength">Strength Training</a>
+          <a href="classes.html#cardio">Cardio Conditioning</a>
+          <a href="classes.html#mobility">Mobility Training</a>
+          <a href="personal-training.html">Personal Training</a>
+        </div>
+        <div class="footer-contact">
+          <h4>Get in Touch</h4>
+          <p>Unit 2 D/E, Bewdley Business Park<br>Long Bank, Bewdley, DY12 2TZ</p>
+          <a href="tel:07817299336">07817 299336</a>
+          <a href="mailto:chrispinner.pt@gmail.com">chrispinner.pt@gmail.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Bewdley Bootcamp. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
