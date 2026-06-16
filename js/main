@@ -1,0 +1,95 @@
+// Bewdley Bootcamp — main.js
+
+// Scrolled header state
+const header = document.getElementById('site-header');
+if (header) {
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+}
+
+// Mobile nav toggle
+const toggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+
+if (toggle && navLinks) {
+  toggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+
+  // Close on link click
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+}
+
+// Mark active nav link
+const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+document.querySelectorAll('.nav-links a:not(.nav-cta)').forEach(link => {
+  const linkPath = link.getAttribute('href');
+  if (linkPath === currentPath) {
+    link.classList.add('active');
+  } else {
+    link.classList.remove('active');
+  }
+});
+
+// Simple scroll-reveal
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+// Apply reveal to cards and sections
+document.querySelectorAll('.class-card, .rate-card, .team-card, .blog-card').forEach((el, i) => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = `opacity 0.5s ease ${i * 0.08}s, transform 0.5s ease ${i * 0.08}s`;
+  observer.observe(el);
+});
+
+// Contact form handler
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const btn = contactForm.querySelector('button[type="submit"]');
+    const original = btn.textContent;
+
+    // Simple client-side submission feedback
+    // (wire up to a backend/Formspree/Netlify Forms in production)
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    setTimeout(() => {
+      btn.textContent = '✓ Message Sent!';
+      btn.style.background = 'var(--moss)';
+      btn.style.color = 'var(--off-white)';
+      btn.style.borderColor = 'var(--moss)';
+      contactForm.reset();
+
+      setTimeout(() => {
+        btn.textContent = original;
+        btn.disabled = false;
+        btn.style.background = '';
+        btn.style.color = '';
+        btn.style.borderColor = '';
+      }, 4000);
+    }, 1200);
+  });
+}
