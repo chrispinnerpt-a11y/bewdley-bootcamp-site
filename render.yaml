@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: bewdley-bootcamp-site
+    runtime: static
+    buildCommand: ""
+    staticPublishPath: .
+    domains:
+      - bewdleybootcamp.co.uk
+      - www.bewdleybootcamp.co.uk
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN
