@@ -13,62 +13,6 @@
   <meta property="og:description" content="Coached strength, conditioning and mobility classes in Bewdley. All abilities welcome.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.bewdleybootcamp.co.uk/">
-  <style>
-.rates-intro {
-  font-size: 1.02rem;
-  color: rgba(232,224,208,0.7);
-  line-height: 1.7;
-  max-width: 560px;
-  margin-top: -24px;
-}
-
-/* Pay As You Go — deliberately quieter than the priced options */
-.rate-card--payg {
-  background: rgba(232,224,208,0.06);
-  border: 1px solid rgba(232,224,208,0.12);
-}
-
-.rate-card--payg:hover { border-bottom-color: var(--moss); }
-
-.rate-card--payg .btn-outline {
-  color: var(--chalk);
-  border-color: rgba(232,224,208,0.4);
-}
-
-.rate-card--payg .btn-outline:hover {
-  background: var(--chalk);
-  color: var(--forest-deep);
-  border-color: var(--chalk);
-}
-
-.rate-payg-note {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.15rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: rgba(232,224,208,0.55);
-  line-height: 1;
-  margin-bottom: 16px;
-  /* matches the vertical rhythm of .rate-price on the priced cards */
-  padding: 14px 0 15px;
-}
-
-.rates-footnote {
-  margin-top: 40px;
-  font-size: 0.875rem;
-  color: rgba(232,224,208,0.5);
-  line-height: 1.6;
-}
-
-.rates-footnote a {
-  color: var(--amber);
-  border-bottom: 1px solid rgba(212,168,67,0.4);
-  transition: border-color var(--transition);
-}
-
-.rates-footnote a:hover { border-bottom-color: var(--amber); }
-</style>
 </head>
 <body>
 
@@ -174,65 +118,56 @@
   </section>
 
   <!-- PRICING BOARD -->
-  <section class="rates-section" id="rates">
-  <div class="container">
+  <section class="section pricing-section" id="rates">
+  <div class="wrap">
 
-    <div class="section-header section-header--light">
-      <span class="section-tag">Membership</span>
-      <h2 class="section-title">TRAIN AS OFTEN<br>AS YOU LIKE</h2>
-      <p class="rates-intro">Coached classes, programmed and progressed. Most members train three or four times a week — unlimited monthly works out cheaper than a block of ten, and there's no counting sessions.</p>
+    <div class="pricing-head">
+      <p class="eyebrow">Membership</p>
+      <h2>Train as often as you like.</h2>
+      <p class="pricing-intro">Coached classes, programmed and progressed. Most members train three or four times a week — unlimited monthly works out cheaper than a block of ten, and there's no counting sessions.</p>
     </div>
 
-    <div class="rates-grid">
+    <div class="pricing-grid">
 
-      <!-- PRIMARY: Unlimited -->
-      <div class="rate-card rate-card--featured">
-        <div class="rate-badge">Best value</div>
+      <!-- PRIMARY -->
+      <article class="pricing-card pricing-card--featured">
+        <span class="pricing-badge">Best value</span>
         <h3>Unlimited Monthly</h3>
-        <div class="rate-price">
-          <span class="price-amount">£70</span>
-          <span class="price-period">/ month</span>
-        </div>
-        <p>Every class, every week. Train as often as you like — no session counting, no expiry, no thinking about it.</p>
-        <a href="booking.html" class="btn btn-primary">Become a Member</a>
-      </div>
+        <p class="pricing-amount">£70<span>/ month</span></p>
+        <p class="pricing-copy">Every class, every week. Train as often as you like — no session counting, no expiry, no thinking about it.</p>
+        <a class="btn btn-solid pricing-btn" href="booking.html">Become a member</a>
+      </article>
 
-      <!-- Block: 60 min -->
-      <div class="rate-card">
+      <!-- BLOCK 60 -->
+      <article class="pricing-card">
         <h3>10 &times; 60min Classes</h3>
-        <div class="rate-price">
-          <span class="price-amount">£75</span>
-          <span class="price-period">block of 10</span>
-        </div>
-        <p>Our full-length sessions. Use them at your own pace if a monthly membership doesn't suit your schedule.</p>
-        <a href="booking.html" class="btn btn-outline">Buy a Block</a>
-      </div>
+        <p class="pricing-amount">£75<span>block of 10</span></p>
+        <p class="pricing-copy">Our full-length sessions. Use them at your own pace if a monthly membership doesn't suit your schedule.</p>
+        <a class="btn btn-ghost pricing-btn" href="booking.html">Buy a block</a>
+      </article>
 
-      <!-- Block: 45 min -->
-      <div class="rate-card">
+      <!-- BLOCK 45 -->
+      <article class="pricing-card">
         <h3>10 &times; 45min Classes</h3>
-        <div class="rate-price">
-          <span class="price-amount">£60</span>
-          <span class="price-period">block of 10</span>
-        </div>
-        <p>The same coaching in a shorter format — built for training around a working day.</p>
-        <a href="booking.html" class="btn btn-outline">Buy a Block</a>
-      </div>
+        <p class="pricing-amount">£60<span>block of 10</span></p>
+        <p class="pricing-copy">The same coaching in a shorter format — built for training around a working day.</p>
+        <a class="btn btn-ghost pricing-btn" href="booking.html">Buy a block</a>
+      </article>
 
-      <!-- PAYG: quiet, no price -->
-      <div class="rate-card rate-card--payg">
+      <!-- PAYG -->
+      <article class="pricing-card pricing-card--payg">
         <h3>Pay As You Go</h3>
-        <div class="rate-payg-note">Options available</div>
-        <p>Training around shift work, or just back after a break? Get in touch and we'll find something that fits.</p>
-        <a href="contact.html" class="btn btn-outline">Enquire</a>
-      </div>
+        <p class="pricing-amount pricing-amount--text">Options available</p>
+        <p class="pricing-copy">Training around shift work, or just back after a break? Get in touch and we'll find something that fits.</p>
+        <a class="btn btn-ghost pricing-btn" href="contact.html">Enquire</a>
+      </article>
 
     </div>
 
-    <p class="rates-footnote">All classes are coached and programmed. Personal training is available alongside membership — <a href="personal-training.html">see PT rates</a>.</p>
+    <p class="pricing-footnote">All classes are coached and programmed. Personal training is available alongside membership — <a href="personal-training.html">see PT rates</a>.</p>
 
   </div>
-  </section>
+</section>
 
   <!-- PT ADD-ON -->
   <section class="section section-alt">
