@@ -31,27 +31,22 @@
     revealEls.forEach(function (el) { el.classList.add("in"); });
   }
 
-  /* Contact form (Formspree) */
+  /* Contact form (Formspree, form mppaygdz) */
   var form = document.querySelector("#contact-form");
-  if (form) {
+  if (form && window.fetch) {
+    var FALLBACK = "Please email chrispinner.pt@gmail.com or call 07817 299336 instead.";
     form.addEventListener("submit", function (ev) {
       ev.preventDefault();
       var status = document.querySelector("#form-status");
       var btn = form.querySelector("button[type=submit]");
-      var action = form.getAttribute("action") || "";
-
-      if (action.indexOf("YOUR_FORM_ID") !== -1) {
-        status.textContent =
-          "The contact form isn't connected yet — please email chrispinner.pt@gmail.com or call 07817 299336.";
-        status.className = "form-status err";
-        return;
-      }
+      var label = btn.textContent;
 
       btn.disabled = true;
-      status.textContent = "Sending…";
+      btn.textContent = "Sending…";
+      status.textContent = "";
       status.className = "form-status";
 
-      fetch(action, {
+      fetch(form.getAttribute("action"), {
         method: "POST",
         body: new FormData(form),
         headers: { Accept: "application/json" }
@@ -61,16 +56,19 @@
             form.reset();
             status.textContent = "Thanks — your message is on its way. We'll get back to you within one working day.";
             status.className = "form-status ok";
-          } else {
-            throw new Error("send failed");
+            return;
           }
+          return res.json().then(function (data) {
+            var msgs = (data && data.errors || []).map(function (e) { return e.message; }).filter(Boolean);
+            throw new Error(msgs.length ? msgs.join(". ") + "." : "");
+          });
         })
-        .catch(function () {
-          status.textContent =
-            "Something went wrong sending your message. Please email chrispinner.pt@gmail.com or call 07817 299336 instead.";
+        .catch(function (err) {
+          var detail = err && err.message ? err.message + " " : "Something went wrong sending your message. ";
+          status.textContent = detail + FALLBACK;
           status.className = "form-status err";
         })
-        .then(function () { btn.disabled = false; });
+        .then(function () { btn.disabled = false; btn.textContent = label; });
     });
   }
 })();

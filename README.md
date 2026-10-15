@@ -1,60 +1,83 @@
 # Bewdley Bootcamp — bewdleybootcamp.co.uk
 
 Static HTML/CSS/JS site. Sells the gym as a functional fitness class location first,
-with personal training as an add-on. Design system matches the Bootcamp Apps sales
-page (dark ground, brand green #4CAF50, Bebas Neue / Barlow Condensed / Barlow).
+with personal training as an add-on. Membership-led pricing: unlimited monthly is the
+featured option; pay-as-you-go exists but carries no price on the site.
+
+Design system matches the Bootcamp Apps sales page — dark ground, brand green
+`#4CAF50`, Bebas Neue / Barlow Condensed / Barlow. Tokens are at the top of
+`css/style.css`. **Use the tokens (`var(--green)`, `var(--bone)` etc.) for anything new.**
 
 ## Pages
 
 | File | Purpose |
 |---|---|
-| `index.html` | Homepage — classes-led |
-| `classes.html` | The three pillars + class rates |
-| `booking.html` | Live PT Minder timetable (embedded) + rates |
-| `personal-training.html` | PT as add-on: free consultation, rates, testimonial |
+| `index.html` | Homepage — classes-led, pricing, Google reviews |
+| `classes.html` | The three pillars + class pricing |
+| `booking.html` | Live PT Minder timetable (embedded) + rates board |
+| `personal-training.html` | PT add-on: free consultation, rates, client reviews |
 | `team.html` | Chris featured + placeholder coach cards |
 | `blog.html` | Blog index (2 live posts) |
 | `blog-strength-at-any-age.html` | Post 1 |
 | `blog-first-class.html` | Post 2 |
 | `blog-post-template.html` | Duplicate for each new post |
-| `contact.html` | Form + details + hours + map |
-| `css/style.css` | All styles — design tokens at the top |
-| `js/main.js` | Nav, reveal animations, contact form |
+| `contact.html` | Formspree form + details + hours + map |
+| `css/style.css` | All styles — one external stylesheet, shared by every page |
+| `js/main.js` | Nav, reveal animations, contact form submission |
+| `images/` | Site photography (see below) |
 
-## Before going live — 3 things only you can do
+## Prices on the site
 
-### 1. Contact form (contact.html)
-Uses Formspree (free tier = 50 messages/month).
-Sign up at https://formspree.io, create a form, replace `YOUR_FORM_ID` in the
-form `action`. Until then the form shows a fallback message pointing to
-email/phone — nothing breaks.
+Change these together if prices move:
 
-### 2. Localise the photos
-Images are currently hot-linked from the Squarespace CDN so the site looks real
-today. **Before cancelling Squarespace**, download each image (URLs are in the
-HTML), save into `/images/`, and update the `src`/`background-image` paths.
-The apps screenshot and logo pull from apps.bewdleybootcamp.co.uk and are fine.
+| | Where it appears |
+|---|---|
+| Unlimited monthly **£70** | `index.html`, `classes.html` (pricing cards), `booking.html` (board + meta), meta descriptions on index/classes |
+| 10 × 60min **£75** | pricing cards, `booking.html` |
+| 10 × 45min **£60** | pricing cards, `booking.html` |
+| Pay as you go | No price shown — "Options available", routes to contact |
+| PT £42.50 / £225 ×6 / £410 ×12 | `personal-training.html` (board + meta) |
 
-### 3. Team page
-Replace the placeholder coach cards in `team.html` with real names, roles,
-bios and 3:4 photos.
+## Integrations
 
-## Verify on first deploy
-- PT Minder iframe (`booking.html`) — URL taken from the live Squarespace
-  booking page: `https://ptminder.com/frame/get-class-scheduler?webaddr=pinnaclepersonaltraining`
-- Google Maps embed on `contact.html` resolves to the right unit
+- **Contact form** — Formspree form `mppaygdz`, posted via `fetch` in `js/main.js`.
+  Includes a `_gotcha` honeypot field for spam. Free tier = 50 messages/month.
+- **Booking** — PT Minder class scheduler iframe:
+  `https://ptminder.com/frame/get-class-scheduler?webaddr=pinnaclepersonaltraining`
+- **Map** — query-based Google Maps embed (address in the URL, no coordinates).
+- **Reviews** — rating and count (4.9 / 29) are typed in by hand on `index.html`
+  and `personal-training.html`. Update both when the Google count changes.
 
-## Pricing used
-Class rates: £8 drop-in / £75 block of 10 / **£70/month unlimited** (from the
-Squarespace booking page — note the old homepage said £63/month; update
-`index.html`, `classes.html` and `booking.html` if £70 is wrong).
-PT: £42.50 / £225 x6 / £410 x12.
+## Images
+
+All photography is in `/images/`, cropped and compressed for its slot:
+
+| File | Used on |
+|---|---|
+| `hero.jpg` / `hero-mobile.jpg` | Homepage hero (mobile version swapped in by CSS under 700px) |
+| `class-strength.jpg`, `class-conditioning.jpg`, `class-mobility.jpg` | Pillar cards, index + classes |
+| `gym-light.jpg` | Classes page, "All abilities" band |
+| `blog-strength.jpg`, `blog-first-class.jpg` | Blog index cards |
+| `og-image.jpg` | Social share preview (all pages) |
+
+**One image is still hot-linked from Squarespace:** the photo of Chris coaching
+(`IMG_1552.jpg`), used on `index.html`, `personal-training.html` and `team.html`.
+Download it and save it as `images/chris-coaching.jpg` **before cancelling
+Squarespace**, then update those three `src` attributes — or replace it with a new
+photo of Chris coaching one-to-one.
+
+## Still to do
+
+- Photo of Chris (portrait) for the team page
+- Real coach profiles in `team.html` (two placeholder cards)
+- Price rise — update the table above when it lands
 
 ## Adding a blog post
-Duplicate `blog-post-template.html`, rename (e.g. `blog-my-post.html`),
-fill in content, add a card to the grid in `blog.html`.
 
-## Deploy (GitHub + Render — same as apps subdomain)
-1. Push this folder to the GitHub repo
-2. Render → New → Static Site → connect repo → build command blank, publish dir `.`
-3. Add custom domains bewdleybootcamp.co.uk + www in Render, point DNS per Render's instructions
+Duplicate `blog-post-template.html`, rename (e.g. `blog-my-post.html`), fill in the
+content, and add a card to the grid in `blog.html` with a 16:9 image in `/images/`.
+
+## Deploy (GitHub + Render — same as the apps subdomain)
+
+`render.yaml` defines a static site publishing the repo root. Pushing to `main`
+redeploys automatically. Custom domains: bewdleybootcamp.co.uk + www.
