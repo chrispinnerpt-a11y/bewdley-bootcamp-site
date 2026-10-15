@@ -45,6 +45,8 @@ Change these together if prices move:
 - **Booking** — PT Minder class scheduler iframe:
   `https://ptminder.com/frame/get-class-scheduler?webaddr=pinnaclepersonaltraining`
 - **Map** — query-based Google Maps embed (address in the URL, no coordinates).
+- **Bootcamp Apps** — included free for members. No app pricing appears anywhere on
+  this site; the homepage band and pricing footnotes present it as a member benefit.
 - **Reviews** — rating and count (4.9 / 29) are typed in by hand on `index.html`
   and `personal-training.html`. Update both when the Google count changes.
 
@@ -55,9 +57,12 @@ All photography is in `/images/`, cropped and compressed for its slot:
 | File | Used on |
 |---|---|
 | `hero.jpg` / `hero-mobile.jpg` | Homepage hero (mobile version swapped in by CSS under 700px) |
-| `class-strength.jpg`, `class-conditioning.jpg`, `class-mobility.jpg` | Pillar cards, index + classes |
+| `class-strength.jpg`, `class-conditioning.jpg` | Pillar cards, index + classes |
 | `gym-light.jpg` | Classes page, "All abilities" band |
 | `blog-strength.jpg`, `blog-first-class.jpg` | Blog index cards |
+| `class-mobility.jpg` | Mobility pillar (suspension-trainer class shot) |
+| `header-classes.jpg`, `header-booking.jpg`, `header-pt.jpg`, `header-team.jpg`, `header-blog.jpg`, `header-contact.jpg` | Photo band behind each interior page title (2:1) |
+| `gym-exterior.jpg` | Contact page, beside the map — "look for the red-framed unit" |
 | `og-image.jpg` | Social share preview (all pages) |
 
 **One image is still hot-linked from Squarespace:** the photo of Chris coaching

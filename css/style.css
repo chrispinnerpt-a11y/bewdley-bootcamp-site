@@ -557,3 +557,44 @@ h4 { font-family: var(--cond); font-weight: 600; text-transform: uppercase;
 
 /* Contact form honeypot */
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+/* ---------- Interior page headers with photography ---------- */
+.page-hero--media {
+  position: relative; isolation: isolate; overflow: hidden;
+  padding: clamp(110px, 16vw, 200px) 0 clamp(40px, 6vw, 64px);
+}
+.page-hero-img {
+  position: absolute; inset: 0; z-index: -2;
+  width: 100%; height: 100%; object-fit: cover;
+  filter: saturate(0.85);
+}
+.page-hero--media::after {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(16,18,16,0.92) 0%, rgba(16,18,16,0.72) 45%, rgba(16,18,16,0.3) 100%),
+    linear-gradient(180deg, rgba(16,18,16,0) 55%, rgba(16,18,16,0.95) 100%);
+}
+@media (max-width: 700px) {
+  .page-hero--media::after {
+    background: linear-gradient(180deg, rgba(16,18,16,0.45) 0%, rgba(16,18,16,0.82) 55%, rgba(16,18,16,0.97) 100%);
+  }
+}
+
+/* ---------- Blog article lead image ---------- */
+.article-img {
+  width: 100%; aspect-ratio: 16 / 9; object-fit: cover;
+  border: 1px solid var(--line); filter: saturate(0.85);
+  margin-bottom: 36px;
+}
+
+/* ---------- Contact: exterior photo + map ---------- */
+.find-us { display: grid; grid-template-columns: 1fr 1.35fr; gap: 22px; align-items: stretch; }
+@media (max-width: 900px) { .find-us { grid-template-columns: 1fr; } }
+.find-us-photo { border: 1px solid var(--line); background: var(--carbon); display: flex; flex-direction: column; }
+.find-us-photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; flex: 1; }
+.find-us-photo figcaption {
+  padding: 14px 18px; font-family: var(--cond); font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.88rem; color: var(--bone);
+  border-top: 2px solid var(--green);
+}
+.find-us .map-frame iframe { height: 100%; min-height: 380px; }
