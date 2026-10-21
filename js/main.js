@@ -1,4 +1,4 @@
-/* Bewdley Bootcamp — shared behaviour */
+/* Bewdley Bootcamp: shared behaviour */
 (function () {
   "use strict";
 
@@ -54,7 +54,7 @@
         .then(function (res) {
           if (res.ok) {
             form.reset();
-            status.textContent = "Thanks — your message is on its way. We'll get back to you within one working day.";
+            status.textContent = "Thanks, your message is on its way. We'll get back to you within one working day.";
             status.className = "form-status ok";
             return;
           }
