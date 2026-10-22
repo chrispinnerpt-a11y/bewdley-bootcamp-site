@@ -11,3 +11,14 @@ services:
       - path: /*
         name: X-Frame-Options
         value: SAMEORIGIN
+    routes:
+      # Old Squarespace store URLs (and /shop shorthand) land on the new shop
+      - type: redirect
+        source: /store
+        destination: /shop.html
+      - type: redirect
+        source: /store/*
+        destination: /shop.html
+      - type: redirect
+        source: /shop
+        destination: /shop.html

@@ -25,10 +25,12 @@ Copy style: no em dashes anywhere in page text.
 | `blog-sisyphus-conundrum.html`, `blog-love-what-youre-good-at.html`, `blog-product-of-your-future.html`, `blog-big-rocks.html`, `blog-biscuit-tin.html`, `blog-christmas-gift-guide-2025.html` | Six posts migrated word for word from the old Squarespace blog. Shown dated monthly, Dec 2025 to May 2026 |
 | `blog-post-template.html` | Duplicate for each new post (marked noindex) |
 | `contact.html` | Formspree form, details, hours, exterior photo and map |
+| `shop.html` | Kit shop. Products rendered from `js/shop.js`, checkout on Stripe |
 | `404.html` | Not-found page (root-absolute paths so it works at any URL) |
 | `sitemap.xml`, `robots.txt` | For search engines. Add new pages and posts to the sitemap |
 | `css/style.css` | All styles, one stylesheet shared by every page |
 | `js/main.js` | Nav, reveal animations, booking embed height, contact form |
+| `js/shop.js` | Shop product list (edit `PRODUCTS`) + grid, filter, thank-you banner |
 | `fonts/`, `icons/` | Self-hosted fonts and favicon (same files as the booking app) |
 | `images/` | Site photography (see below) |
 
@@ -92,6 +94,22 @@ Each coach on `team.html` is one `<section>` using `.band.band--profile` (add `r
 to alternate sides): portrait, bio, a quote, then a `.profile-facts` list. To add
 Leighton, copy Tiff's section, swap the content, and delete his holding card at the
 bottom. Portraits are 3:4, saved as `images/team-<name>.jpg`.
+
+## Shop
+
+No basket, collection only. Each product's **Buy now** button opens a Stripe
+Payment Link; size and colour are dropdowns on the Stripe checkout. Stripe emails
+the customer a receipt and the order (with size/colour) shows in the Stripe
+dashboard.
+
+- **Edit products** in the `PRODUCTS` list at the top of `js/shop.js`
+  (price, sizes, `soldOut: true`, `stripe` link).
+- A product with no `stripe` link shows an **Ask at the gym** button instead.
+- Each payment link's "after payment" setting should redirect to
+  `https://www.bewdleybootcamp.co.uk/shop.html?order=thanks` (shows the thank-you banner).
+- Photos go in `images/shop/` named after the product `id` (e.g. `hoodie.jpg`),
+  square-ish, on a white/light background. Missing photos show a branded tile.
+- Old Squarespace `/store` URLs redirect to `/shop.html` (`render.yaml` routes).
 
 ## Images
 
