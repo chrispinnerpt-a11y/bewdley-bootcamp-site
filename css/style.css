@@ -650,10 +650,10 @@ h4 { font-family: var(--cond); font-weight: 600; text-transform: uppercase;
 .shop-card:hover { border-color: var(--green); }
 
 .shop-media {
-  position: relative; aspect-ratio: 4 / 5; overflow: hidden;
-  background: #F1EFEA; /* product photos are mostly on white */
+  position: relative; aspect-ratio: 1 / 1; overflow: hidden;
+  background: #FFFFFF; /* product photos are mostly on white */
 }
-.shop-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+.shop-media img { width: 100%; height: 100%; object-fit: contain; transition: transform 0.4s ease; }
 .shop-card:hover .shop-media img { transform: scale(1.03); }
 .shop-media-mark { display: none; }
 .shop-media--empty {
@@ -699,7 +699,6 @@ h4 { font-family: var(--cond); font-weight: 600; text-transform: uppercase;
 @media (max-width: 560px) {
   .shop-collect { padding: 18px; gap: 14px; }
   .shop-grid { grid-template-columns: 1fr; }
-  .shop-media { aspect-ratio: 1 / 1; }
   .shop-filters {
     flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none;
     margin-right: calc(var(--pad) * -1); padding-right: var(--pad);
