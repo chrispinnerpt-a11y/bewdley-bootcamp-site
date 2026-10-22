@@ -22,8 +22,10 @@ Design system matches the Bootcamp Apps sales page — dark ground, brand green
 | `blog-first-class.html` | Post 2 |
 | `blog-post-template.html` | Duplicate for each new post |
 | `contact.html` | Formspree form + details + hours + map |
+| `shop.html` | Kit shop. Products rendered from `js/shop.js`, checkout on Stripe |
 | `css/style.css` | All styles — one external stylesheet, shared by every page |
 | `js/main.js` | Nav, reveal animations, contact form submission |
+| `js/shop.js` | Shop product list (edit `PRODUCTS`) + grid, filter, thank-you banner |
 | `images/` | Site photography (see below) |
 
 ## Prices on the site
@@ -49,6 +51,22 @@ Change these together if prices move:
   this site; the homepage band and pricing footnotes present it as a member benefit.
 - **Reviews** — rating and count (4.9 / 29) are typed in by hand on `index.html`
   and `personal-training.html`. Update both when the Google count changes.
+
+## Shop
+
+No basket, collection only. Each product's **Buy now** button opens a Stripe
+Payment Link; size and colour are dropdowns on the Stripe checkout. Stripe emails
+the customer a receipt and the order (with size/colour) shows in the Stripe
+dashboard.
+
+- **Edit products** in the `PRODUCTS` list at the top of `js/shop.js`
+  (price, sizes, `soldOut: true`, `stripe` link).
+- A product with no `stripe` link shows an **Ask at the gym** button instead.
+- Each payment link's "after payment" setting should redirect to
+  `https://www.bewdleybootcamp.co.uk/shop.html?order=thanks` (shows the thank-you banner).
+- Photos go in `images/shop/` named after the product `id` (e.g. `hoodie.jpg`),
+  square-ish, on a white/light background. Missing photos show a branded tile.
+- Old Squarespace `/store` URLs redirect to `/shop.html` (`render.yaml` routes).
 
 ## Images
 
