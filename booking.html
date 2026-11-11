@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Book a Class | Bewdley Bootcamp</title>
   <meta name="description" content="Book Bewdley Bootcamp functional fitness classes online. Unlimited monthly £70, 10 × 60min classes £75, 10 × 45min classes £60. Pay-as-you-go options available.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-180.png">
+  <link rel="canonical" href="https://www.bewdleybootcamp.co.uk/booking.html">
   <meta property="og:title" content="Book a Class | Bewdley Bootcamp">
   <meta property="og:description" content="Book Bewdley Bootcamp functional fitness classes online. Unlimited monthly £70, 10 × 60min classes £75, 10 × 45min classes £60. Pay-as-you-go options available.">
   <meta property="og:type" content="website">
@@ -24,11 +24,12 @@
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="classes.html">Classes</a></li>
+      <li><a href="booking.html" aria-current="page">Booking</a></li>
       <li><a href="personal-training.html">Personal Training</a></li>
       <li><a href="team.html">Team</a></li>
       <li><a href="blog.html">Blog</a></li>
       <li><a href="contact.html">Contact</a></li>
-      <li><a class="nav-cta" href="booking.html" aria-current="page">Sign Up</a></li>
+      <li><a class="nav-cta" href="https://booking.bewdleybootcamp.co.uk/#/login">Sign Up</a></li>
     </ul>
   </div>
 </header>
@@ -40,13 +41,22 @@
   <div class="wrap">
     <p class="eyebrow">Booking</p>
     <h1>Book a class.</h1>
-    <p class="lead">Pick any session from the live timetable below. Payments are handled through the <strong style="color:var(--bone)">Store</strong> tab: unlimited monthly memberships, class blocks and pay-as-you-go options are all in there.</p>
+    <p class="lead">Pick any session from the live timetable below. Log in with your email to book, and manage your bookings, membership and class credits from your account.</p>
   </div>
 </section>
 
-<section class="section" style="padding-top:clamp(36px,5vw,56px)">
+<section class="section" id="timetable" style="padding-top:clamp(36px,5vw,56px)">
   <div class="wrap">
-    <div class="split" style="margin-bottom:36px">
+    <div class="booking-frame">
+      <iframe id="bb-booking" src="https://booking.bewdleybootcamp.co.uk/?embed=1" title="Book a class at Bewdley Bootcamp"></iframe>
+    </div>
+    <p class="board-note" style="margin-top:14px">Prefer it full screen, or timetable not showing? <a href="https://booking.bewdleybootcamp.co.uk/">Open the booking system in its own window</a>.</p>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="split">
       <div class="board reveal">
         <p class="board-title">Class Rates</p>
         <ul class="board-rows">
@@ -58,18 +68,17 @@
       </div>
       <div class="reveal">
         <h3 style="margin-bottom:12px">Before your first class</h3>
-        <p>A medical form is emailed to you automatically when you sign up. Please complete it before attending. Then just turn up in comfortable kit with a water bottle. Everything else is provided.</p>
-        <p style="margin-top:12px">Any trouble booking? <a href="contact.html">Get in touch</a> or call <a href="tel:07817299336">07817 299336</a>.</p>
+        <p>You'll be asked to fill in a short health form online before your first session. Then just turn up in comfortable kit with a water bottle. Everything else is provided.</p>
+        <h3 style="margin:28px 0 4px">Good to know</h3>
+        <ul class="checklist" style="margin-top:8px">
+          <li>60-minute classes run Monday, Wednesday, Friday and Saturday. Tuesday and Thursday are 45-minute sessions</li>
+          <li>Book up to two months ahead, right up until 15 minutes before a class starts</li>
+          <li>Plans changed? Cancel up to 15 minutes before and you keep your credit</li>
+          <li>Class full? Join the waitlist and you'll be moved in automatically if a place opens up</li>
+        </ul>
+        <p style="margin-top:18px">Any trouble booking? <a href="contact.html">Get in touch</a> or call <a href="tel:07817299336">07817 299336</a>.</p>
       </div>
     </div>
-
-    <div class="booking-frame reveal">
-      <iframe
-        src="https://ptminder.com/frame/get-class-scheduler?webaddr=pinnaclepersonaltraining"
-        title="Bewdley Bootcamp class booking (PT Minder)"
-        loading="lazy"></iframe>
-    </div>
-    <p class="board-note" style="margin-top:14px">If the booking system doesn't load, <a href="https://ptminder.com/frame/get-class-scheduler?webaddr=pinnaclepersonaltraining" target="_blank" rel="noopener">open it in a new tab</a>.</p>
   </div>
 </section>
 

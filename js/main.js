@@ -31,6 +31,18 @@
     revealEls.forEach(function (el) { el.classList.add("in"); });
   }
 
+  /* Booking embed: the booking app reports its height so the iframe fits its content */
+  var bookingFrame = document.getElementById("bb-booking");
+  if (bookingFrame) {
+    window.addEventListener("message", function (e) {
+      if (e.origin !== "https://booking.bewdleybootcamp.co.uk") return;
+      var d = e.data;
+      if (d && d.type === "bb-height" && typeof d.height === "number" && d.height > 0) {
+        bookingFrame.style.height = Math.ceil(d.height) + "px";
+      }
+    });
+  }
+
   /* Contact form (Formspree, form mppaygdz) */
   var form = document.querySelector("#contact-form");
   if (form && window.fetch) {
