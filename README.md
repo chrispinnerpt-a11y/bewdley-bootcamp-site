@@ -87,7 +87,7 @@ hot-linked from Squarespace any more.
 
 | File | Used on |
 |---|---|
-| `hero.jpg` / `hero-mobile.jpg` | Homepage hero (mobile version swapped in by CSS under 700px) |
+| `hero-class.jpg` | Homepage hero: class photo with the club badge. Set in `css/style.css` (`.hero-media`), shown whole on the right on desktop |
 | `class-strength.jpg`, `class-conditioning.jpg`, `class-mobility.jpg` | Pillar cards, index + classes |
 | `gym-light.jpg` | Classes page, "All abilities" band |
 | `team-chris.jpg`, `team-liz.jpg`, `team-tiff.jpg` | Team profiles. Chris's is also the PT band on index + PT page |
