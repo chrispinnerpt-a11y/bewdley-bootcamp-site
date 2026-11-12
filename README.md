@@ -94,7 +94,8 @@ hot-linked from Squarespace any more.
 | `blog-strength.jpg`, `blog-first-class.jpg` | Blog cards and post lead images |
 | `header-*.jpg` | Photo band behind each interior page title (2:1) |
 | `gym-exterior.jpg` | Contact page, beside the map |
-| `og-image.jpg` | Social share preview (all pages) |
+| `badge.png` | The club badge, transparent. Footer of every page, and faint behind the closing call-to-action bands (`.cta-banner`) |
+| `og-badge.jpg` | Link preview when the site is shared (all pages): the badge on the page colour, 1200×630 |
 
 ## Still to do
 
