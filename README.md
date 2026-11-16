@@ -19,9 +19,10 @@ Copy style: no em dashes anywhere in page text.
 | `booking.html` | The "Booking" tab: live booking system embedded, rates board, good to know |
 | `personal-training.html` | PT add-on: free consultation, rates, client reviews |
 | `team.html` | Coach profiles: Chris, Liz, Tiff. Leighton has a holding card |
-| `blog.html` | Blog index (2 live posts) |
+| `blog.html` | Blog index (8 live posts, newest first) |
 | `blog-strength-at-any-age.html` | Post 1 |
 | `blog-first-class.html` | Post 2 |
+| `blog-sisyphus-conundrum.html`, `blog-love-what-youre-good-at.html`, `blog-product-of-your-future.html`, `blog-big-rocks.html`, `blog-biscuit-tin.html`, `blog-christmas-gift-guide-2025.html` | Six posts migrated word for word from the old Squarespace blog. Shown dated monthly, Dec 2025 to May 2026 |
 | `blog-post-template.html` | Duplicate for each new post (marked noindex) |
 | `contact.html` | Formspree form, details, hours, exterior photo and map |
 | `404.html` | Not-found page (root-absolute paths so it works at any URL) |
@@ -82,8 +83,12 @@ bottom. Portraits are 3:4, saved as `images/team-<name>.jpg`.
 
 ## Images
 
-All photography is in `/images/`, cropped and compressed for its slot. Nothing is
-hot-linked from Squarespace any more.
+All site photography is in `/images/`, cropped and compressed for its slot.
+
+**Exception:** the six migrated blog posts load their header and in-text images
+straight from the Squarespace CDN (`images.squarespace-cdn.com`, `static1.squarespace.com`).
+These will break when the Squarespace account is closed. Before cancelling Squarespace,
+copy those 11 images into `/images/` and update the `src` in the posts and in `blog.html`.
 
 | File | Used on |
 |---|---|
@@ -99,6 +104,7 @@ hot-linked from Squarespace any more.
 
 ## Still to do
 
+- Move the migrated blog images off the Squarespace CDN into `/images/` (see Images)
 - Leighton's profile and photo
 - Higher-resolution coach portraits (current ones are cropped from Instagram graphics)
 - A photo of Chris coaching one-to-one for the PT bands
@@ -108,7 +114,7 @@ hot-linked from Squarespace any more.
 
 Duplicate `blog-post-template.html`, rename (e.g. `blog-my-post.html`), remove the
 `noindex` line, fill in the content, add a card to the grid in `blog.html` with a 16:9
-image in `/images/`, and add the URL to `sitemap.xml`.
+image in `/images/`, and add the URL to `sitemap.xml`. Write new posts in Chris's voice: see `VOICE.md`.
 
 ## Deploy (GitHub + Render)
 

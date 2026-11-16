@@ -673,3 +673,9 @@ h4 { font-family: var(--cond); font-weight: 600; text-transform: uppercase;
 
 /* Bold text inside copy blocks reads in the heading colour */
 .band-copy strong, .split strong { color: var(--bone); font-weight: 600; }
+
+/* ---------- Blog: migrated posts (images shown at their own size, uncropped) ---------- */
+.article-img--native { width: auto; max-width: 100%; height: auto; aspect-ratio: auto; display: block; }
+.article-inline { display: block; max-width: 100%; height: auto; margin: 28px auto; border: 1px solid var(--line); }
+.article hr { border: 0; border-top: 1px solid var(--line); margin: 40px 0; }
+.article blockquote p + p { margin-top: 14px; }
