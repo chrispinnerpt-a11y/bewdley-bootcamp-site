@@ -533,10 +533,9 @@ h4 { font-family: var(--cond); font-weight: 600; text-transform: uppercase;
 
 /* Pay as you go — present, not pushed */
 .pricing-card--payg { background: transparent; border-style: dashed; }
-.pricing-amount--text {
-  font-size: clamp(1.6rem, 2.6vw, 1.9rem); color: var(--faint);
-  min-height: clamp(3rem, 5vw, 3.6rem); align-items: center;
-}
+/* Two prices in one card (pay as you go: 60 and 45 minute classes) */
+.pricing-amount--pair { font-size: clamp(2.1rem, 3.4vw, 2.5rem); margin-bottom: 8px; }
+.pricing-amount--pair + .pricing-copy { margin-top: 10px; }
 
 .pricing-footnote { margin-top: 32px; font-size: 0.92rem; color: var(--faint); }
 
@@ -654,6 +653,8 @@ h4 { font-family: var(--cond); font-weight: 600; text-transform: uppercase;
 .fact { border: 1px solid var(--line); background: var(--carbon); padding: 20px 22px 18px; }
 .fact strong { display: block; font-family: var(--display); font-weight: 400; font-size: 2.4rem; line-height: 1; color: var(--green); margin-bottom: 8px; }
 .fact span { font-family: var(--cond); font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.9rem; color: var(--mist); }
+.fact p { font-size: 0.95rem; color: var(--mist); margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--line); }
+.fact-row { align-items: stretch; }
 
 /* ---------- Club badge ---------- */
 /* Footer: the badge stands in for the text wordmark. */
@@ -669,3 +670,6 @@ h4 { font-family: var(--cond); font-weight: 600; text-transform: uppercase;
   background: url("../images/badge.png") center / contain no-repeat;
   opacity: 0.06;
 }
+
+/* Bold text inside copy blocks reads in the heading colour */
+.band-copy strong, .split strong { color: var(--bone); font-weight: 600; }

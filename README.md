@@ -2,7 +2,7 @@
 
 Static HTML/CSS/JS site, no build step. Sells the gym as a functional fitness class
 location first, with personal training as an add-on. Membership-led pricing: unlimited
-monthly is the featured option; pay-as-you-go exists but carries no price on the site.
+monthly is the featured option; pay-as-you-go prices are published but the card is kept quieter.
 
 Design system matches the booking app and the Bootcamp Apps page: dark ground, brand
 green `#4CAF50`, Bebas Neue / Barlow Condensed / Barlow. Tokens are at the top of
@@ -57,7 +57,7 @@ Change these together if prices move (they match the products in the booking sys
 | Unlimited monthly **£70** | `index.html`, `classes.html` (pricing cards), `booking.html` (board + meta), meta descriptions on index/classes |
 | 10 × 60min **£75** | pricing cards, `booking.html` |
 | 10 × 45min **£60** | pricing cards, `booking.html` |
-| Pay as you go | No price shown: "Options available", routes to contact |
+| Pay as you go **£8** (60min) / **£6.50** (45min) | pricing cards on index + classes, `booking.html` (board + meta) |
 | PT £42.50 / £225 ×6 / £410 ×12 | `personal-training.html` (board + meta) |
 
 ## Other integrations
