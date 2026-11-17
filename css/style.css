@@ -679,3 +679,9 @@ h4 { font-family: var(--cond); font-weight: 600; text-transform: uppercase;
 .article-inline { display: block; max-width: 100%; height: auto; margin: 28px auto; border: 1px solid var(--line); }
 .article hr { border: 0; border-top: 1px solid var(--line); margin: 40px 0; }
 .article blockquote p + p { margin-top: 14px; }
+
+/* ---------- Booking: temporary launch button (PT Minder) ---------- */
+.booking-launch { border: 1px solid var(--line); background: var(--carbon); padding: clamp(28px, 5vw, 56px);
+  text-align: center; max-width: 760px; margin: 0 auto; }
+.booking-launch > p:not(.board-title):not(.board-note) { max-width: 520px; margin: 0 auto; }
+.booking-launch-btn { margin-top: 26px; font-size: 1.15rem; padding: 18px 44px; }

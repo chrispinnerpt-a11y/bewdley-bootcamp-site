@@ -34,6 +34,18 @@ Copy style: no em dashes anywhere in page text.
 
 ## Booking
 
+**Right now (temporary):** the new booking system hasn't launched, so the Booking page
+shows one button to PT Minder (`https://pinnaclepersonaltraining.ptminder.com`), and the
+nav "Sign Up" button and the homepage JSON-LD point there too.
+
+**To switch back when the new system goes live:**
+1. `booking.html`: delete the `.booking-launch` block and uncomment the iframe block below it.
+   Restore the hero lead text if wanted.
+2. Every page: change the nav "Sign Up" href back to `https://booking.bewdleybootcamp.co.uk/#/login`
+   (and drop `target="_blank" rel="noopener"`).
+3. `index.html`: JSON-LD `ReserveAction` target back to `https://booking.bewdleybootcamp.co.uk/`.
+4. Check the "Good to know" list on `booking.html` still matches the new system's rules.
+
 The booking system lives at `https://booking.bewdleybootcamp.co.uk` (separate repo,
 `bewdley-bootcamp-booking`).
 
