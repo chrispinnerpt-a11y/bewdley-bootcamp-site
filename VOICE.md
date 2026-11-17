@@ -30,8 +30,8 @@ site copy.
   with And, So, But, Because. Fragments are fine: "Rather than your past."
 - **Dry, self-deprecating humour.** He is the example of the bad habit, not the client.
   Sings 80s power ballads badly. Crumbles at the smallest glimmer of temptation.
-- **Family and running jokes.** Mother Pinnacle, The Future Mrs Pinnacle, Toby the dog.
-  Asides in brackets: "(don't tell Phil)".
+- **Family and running jokes.** Mrs Bewdley Bootcamp, the girls, his mum and her biscuit
+  tin. Asides in brackets: "(That's my excuse for having 6 pairs in rotation anyway)".
 - **British, everyday words.** Barnstormer, worth their salt, chocolate hobnob, crack a
   beer, kitchen side. UK spelling.
 - **Wears learning lightly.** Will quote Camus, then undercut it: "Life's not that bad
