@@ -24,7 +24,7 @@ var PRODUCTS = [
     sizes: ["S", "M", "L", "XL", "XXL"],
     colours: ["Black", "Pink", "Purple"],
     image: "images/shop/hoodie.jpg",
-    stripe: ""
+    stripe: "https://buy.stripe.com/00wbJ0bDf2OB8wSaKj63K03"
   },
   {
     id: "sweater",
@@ -35,7 +35,7 @@ var PRODUCTS = [
     sizes: ["S", "M", "L", "XL", "XXL"],
     colours: ["Navy"],
     image: "images/shop/sweater.jpg",
-    stripe: ""
+    stripe: "https://buy.stripe.com/eVqaEWazbexj28uf0z63K04"
   },
   {
     id: "tee-2025",
@@ -46,7 +46,7 @@ var PRODUCTS = [
     sizes: ["S", "M", "L", "XL", "XXL"],
     colours: [],
     image: "images/shop/tee-2025.jpg",
-    stripe: ""
+    stripe: "https://buy.stripe.com/fZueVc0YBbl7cN85pZ63K05"
   },
   {
     id: "vest-2025",
@@ -57,7 +57,7 @@ var PRODUCTS = [
     sizes: ["S (8/10)", "M (12)", "L (14)", "XL (16)"],
     colours: [],
     image: "images/shop/vest-2025.jpg",
-    stripe: ""
+    stripe: "https://buy.stripe.com/7sY3cu7mZcpbaF04lV63K06"
   },
   {
     id: "cotton-vest",
@@ -68,7 +68,7 @@ var PRODUCTS = [
     sizes: ["XS (8)", "S (10)", "M (12)", "L (14)", "XL (16)"],
     colours: ["Black"],
     image: "images/shop/cotton-vest.jpg",
-    stripe: ""
+    stripe: "https://buy.stripe.com/aFacN40YB1KxcN8bOn63K07"
   },
   {
     id: "bobble-hat",
@@ -79,7 +79,7 @@ var PRODUCTS = [
     sizes: [],
     colours: ["Grey", "Pink"],
     image: "images/shop/bobble-hat.jpg",
-    stripe: ""
+    stripe: "https://buy.stripe.com/bJeaEWePrbl7cN82dN63K08"
   },
 
   /* ---------- Rise Up Run Club ---------- */
@@ -92,7 +92,7 @@ var PRODUCTS = [
     sizes: ["S", "M", "L", "XL", "XXL"],
     colours: [],
     image: "images/shop/riseup-ladies.jpg",
-    stripe: ""
+    stripe: "https://buy.stripe.com/8x2fZgbDf88V6oK7y763K09"
   },
   {
     id: "riseup-mens",
@@ -103,7 +103,7 @@ var PRODUCTS = [
     sizes: ["S", "M", "L", "XL", "XXL"],
     colours: [],
     image: "images/shop/riseup-mens.jpg",
-    stripe: ""
+    stripe: "https://buy.stripe.com/14AcN46iVah3fZk19J63K0a"
   },
 
   /* ---------- Recovery & nutrition ---------- */
@@ -116,18 +116,18 @@ var PRODUCTS = [
     sizes: [],
     colours: [],
     image: "images/shop/massage-gun.jpg",
-    stripe: ""
+    stripe: "https://buy.stripe.com/28EdR822Fexj4gCg4D63K0b"
   },
   {
     id: "recipe-book",
     category: "recovery",
     name: "Protein Booster Recipe Book",
     price: 10,
-    blurb: "30 easy, healthy recipes: breakfast, lunch, dinner, treats and smoothies. Digital copy plus a printed copy to collect.",
+    blurb: "30 easy, healthy recipes: breakfast, lunch, dinner, treats and smoothies. Digital copy by email, plus a printed copy to collect.",
     sizes: [],
     colours: [],
     image: "images/shop/recipe-book.jpg",
-    stripe: ""
+    stripe: "https://buy.stripe.com/bJebJ08r34WJ00m2dN63K0c"
   }
 ];
 
