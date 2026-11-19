@@ -460,6 +460,8 @@ h4 { font-family: var(--cond); font-weight: 600; text-transform: uppercase;
   display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between;
   font-size: 0.85rem; color: var(--faint);
 }
+.footer-legal a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.footer-legal a:hover { color: var(--green-hi); }
 
 /* ---------- Reveal animation ---------- */
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
